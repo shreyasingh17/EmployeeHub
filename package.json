@@ -1,7 +1,13 @@
 {
   "name": "employee-crud",
+  "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
-    "start": "node backend/server.js"
+    "build": "npm --prefix frontend install; npm --prefix frontend run build; npm --prefix backend install",
+    "start": "concurrently \"npm --prefix backend start\" \"npm --prefix frontend start\"",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
