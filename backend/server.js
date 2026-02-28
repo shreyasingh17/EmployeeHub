@@ -11,7 +11,12 @@ app.use(express.json());
 
 app.use('/employees', employeeRoutes);
 
-app.use(express.static(path.join(__dirname, '../frontend/dist/employee-crud')));
+const distPath = path.join(__dirname, '../frontend/dist/employee-crud');
+app.use(express.static(distPath));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
+});
 
 app.use(notFoundRoutes);
 
