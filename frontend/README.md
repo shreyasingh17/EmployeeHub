@@ -5,7 +5,7 @@ Angular frontend application for the Employee CRUD workspace.
 ## 🚀 Live Demo
 
 👉 **Frontend + Backend App**  
-🔗 [https://employeehub-olfs.onrender.com]
+🔗 https://employeehub-olfs.onrender.com
 
 ## Quick Start
 
