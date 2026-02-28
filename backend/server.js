@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use('/employees', employeeRoutes);
 
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist/employee-crud')));
 
 app.use(notFoundRoutes);
 
