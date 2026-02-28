@@ -1,0 +1,28 @@
+{
+    "employees":  [
+                      {
+                          "id":  "e1f81b89-0e5b-45e4-9a39-41e2ea3778d0",
+                          "location":  "Bengaluru",
+                          "fullName":  "Asha Kumar",
+                          "role":  "Frontend Developer",
+                          "dateJoined":  "2023-04-12",
+                          "salary":  72000,
+                          "status":  "Active",
+                          "department":  "Engineering",
+                          "phone":  "+919999999999",
+                          "email":  "asha@gmail.com"
+                      },
+                      {
+                          "id":  "6f30dc6d-2207-4ef3-9be5-fcc42d530c1f",
+                          "fullName":  "Rohan Singh",
+                          "email":  "rohan@gmail.com",
+                          "phone":  "+918888888888",
+                          "department":  "HR",
+                          "role":  "HR Executive",
+                          "status":  "Active",
+                          "location":  "Pune",
+                          "dateJoined":  "2022-11-02",
+                          "salary":  54000
+                      }
+                  ]
+}

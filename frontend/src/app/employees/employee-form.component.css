@@ -1,0 +1,26 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+h3 {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+}
+
+.error-summary {
+  background: #fce8e6;
+  color: #8a1c13;
+  border: 1px solid #f28b82;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}

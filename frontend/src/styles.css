@@ -1,0 +1,26 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	font-family: Roboto, Arial, sans-serif;
+	background: #f3f5f9;
+	color: #1f2937;
+}
+
+.full-width {
+	width: 100%;
+}
+
+:focus-visible {
+	outline: 3px solid #1a73e8;
+	outline-offset: 2px;
+}
+
+mat-card {
+	border-radius: 12px !important;
+}

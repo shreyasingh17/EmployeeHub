@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.column-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.table-wrapper {
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 980px;
+}
+
+th[mat-header-cell] {
+  cursor: pointer;
+}
+
+.actions-cell {
+  white-space: nowrap;
+}
+
+.loading-state,
+.error-state,
+.empty-state {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

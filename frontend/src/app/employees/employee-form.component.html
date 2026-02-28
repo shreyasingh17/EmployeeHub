@@ -1,0 +1,87 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ isEdit ? 'Edit Employee' : 'Create Employee' }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p *ngIf="loading">Loading...</p>
+
+    <ng-container *ngIf="!loading">
+      <div *ngIf="submitted && form.invalid" class="error-summary" role="alert" aria-live="assertive">
+        Please correct the highlighted fields.
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="save()" class="form-grid">
+        <h3>Personal</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="fullName" />
+          <mat-error *ngIf="form.controls.fullName.touched && form.controls.fullName.invalid">
+            Enter 2-80 letters/spaces/hyphen only.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="Active">Active</mat-option>
+            <mat-option value="Inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date Joined</mat-label>
+          <input matInput type="date" formControlName="dateJoined" />
+          <mat-error *ngIf="form.controls.dateJoined.errors?.['futureDate']">
+            Date joined cannot be in the future.
+          </mat-error>
+        </mat-form-field>
+
+        <h3>Job</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Department</mat-label>
+          <input matInput formControlName="department" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Role</mat-label>
+          <input matInput formControlName="role" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Salary</mat-label>
+          <input matInput type="number" min="0" formControlName="salary" />
+        </mat-form-field>
+
+        <h3>Contact</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error *ngIf="form.controls.email.touched && form.controls.email.invalid">
+            Enter a valid email address.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" />
+          <mat-error *ngIf="form.controls.phone.touched && form.controls.phone.invalid">
+            Use E.164 or local phone format.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" />
+        </mat-form-field>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="saving">
+            {{ saving ? 'Saving...' : 'Save' }}
+          </button>
+          <button mat-button type="button" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
