@@ -1,0 +1,7 @@
+{
+  "name": "employee-crud",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "start": "node backend/server.js"
+  }
+}

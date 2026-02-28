@@ -1,15 +1,21 @@
 const express = require('express');
 const cors = require('cors');
-const { registerEmployeeRoutes } = require('./routes/employee.routes');
+const path = require('path');
+const employeeRoutes = require('./routes/employee.routes');
+const notFoundRoutes = require('./routes/not-found.routes');
 
 const app = express();
-const port = 3000;
 
 app.use(cors());
 app.use(express.json());
 
-registerEmployeeRoutes(app);
+app.use('/employees', employeeRoutes);
 
-app.listen(port, () => {
-  console.log(`Backend API running at http://localhost:${port}`);
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+app.use(notFoundRoutes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

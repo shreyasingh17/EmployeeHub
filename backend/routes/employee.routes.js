@@ -1,3 +1,4 @@
+const express = require('express');
 const {
   listEmployees,
   getEmployeeById,
@@ -6,14 +7,12 @@ const {
   deleteEmployee
 } = require('../controllers/employee.controller');
 
-function registerEmployeeRoutes(app) {
-  app.get('/employees', listEmployees);
-  app.get('/employees/:id', getEmployeeById);
-  app.post('/employees', createEmployee);
-  app.put('/employees/:id', updateEmployee);
-  app.delete('/employees/:id', deleteEmployee);
-}
+const router = express.Router();
 
-module.exports = {
-  registerEmployeeRoutes
-};
+router.get('/', listEmployees);
+router.get('/:id', getEmployeeById);
+router.post('/', createEmployee);
+router.put('/:id', updateEmployee);
+router.delete('/:id', deleteEmployee);
+
+module.exports = router;
