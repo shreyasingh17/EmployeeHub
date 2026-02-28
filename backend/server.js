@@ -11,7 +11,8 @@ app.use(express.json());
 
 app.use('/employees', employeeRoutes);
 
-const distPath = path.join(__dirname, '../frontend/dist/employee-crud');
+const distPath = path.join(__dirname, '../frontend/dist/employee-crud/browser');
+
 app.use(express.static(distPath));
 
 app.get('/', (req, res) => {
